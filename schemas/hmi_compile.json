@@ -1,0 +1,1 @@
+{"name":"hmi_compile","description":"Compile HMI software / runtime device using ICompilable. Returns errors, warnings, and messages.","parameters":{"additionalProperties":false,"properties":{"target_device":{"description":"Device name (e.g. 'PC-System_1', optional).","type":"string"}},"type":"object"}}

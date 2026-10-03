@@ -1,0 +1,1 @@
+{"name":"plcsim_write_tags","description":"Write multiple live values to variables/tags in S7-PLCSIM Advanced memory.","parameters":{"additionalProperties":false,"properties":{"tags":{"description":"Key-value dictionary mapping symbolic tag names to values.","type":"object"}},"required":["tags"],"type":"object"}}

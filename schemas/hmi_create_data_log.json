@@ -1,0 +1,1 @@
+{"name":"hmi_create_data_log","description":"Create a new DataLog in WinCC Unified HMI software.","parameters":{"additionalProperties":false,"properties":{"log_name":{"description":"Name of the DataLog to create.","type":"string"},"target_name":{"description":"Target HMI software name (optional).","type":"string"}},"required":["log_name"],"type":"object"}}

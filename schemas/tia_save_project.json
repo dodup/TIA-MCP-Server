@@ -1,0 +1,1 @@
+{"name":"tia_save_project","description":"Save changes to the active TIA Portal project.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

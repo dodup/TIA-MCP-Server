@@ -1,0 +1,1 @@
+{"name":"tia_list_plc_types","description":"List PLC user data types (UDTs) with consistency state and folder path.","parameters":{"additionalProperties":false,"properties":{"plc_name":{"description":"Name of the target PLC (optional, defaults to first PLC).","type":"string"}},"type":"object"}}

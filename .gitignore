@@ -1,0 +1,26 @@
+## Build and Object Folders
+src/bin/
+src/obj/
+[Bb]in/
+[Oo]bj/
+
+## Visual Studio & Rider IDE files
+.vs/
+.idea/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+
+## Logs & Diagnostics
+*.log
+_UpgradeReport_Files/
+Backup*/
+
+## OS Generated
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

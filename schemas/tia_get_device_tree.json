@@ -1,0 +1,1 @@
+{"name":"tia_get_device_tree","description":"Get hierarchical hardware tree for a device (racks, slots, CPU, modules, subnets, interfaces).","parameters":{"additionalProperties":false,"properties":{"device_name":{"description":"Name of the device to inspect.","type":"string"}},"required":["device_name"],"type":"object"}}

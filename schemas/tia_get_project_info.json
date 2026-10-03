@@ -1,0 +1,1 @@
+{"name":"tia_get_project_info","description":"Get detailed metadata for the currently open TIA Portal project (name, path, author, comments, timestamps).","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

@@ -1,0 +1,1 @@
+{"name":"hmi_list_tags","description":"List HMI tags with their table, connection, PLC tag binding, and data type.","parameters":{"additionalProperties":false,"properties":{"table_name":{"description":"Tag table name (optional, all tables if omitted).","type":"string"},"target_name":{"description":"Target HMI software name (optional).","type":"string"}},"type":"object"}}

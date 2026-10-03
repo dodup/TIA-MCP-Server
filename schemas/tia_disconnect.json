@@ -1,0 +1,1 @@
+{"name":"tia_disconnect","description":"Disconnect / detach from the active TIA Portal instance.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

@@ -1,0 +1,1 @@
+{"name":"hmi_list_targets","description":"List all HMI targets (WinCC Unified runtime devices/software) in the active project.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

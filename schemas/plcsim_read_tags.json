@@ -1,0 +1,1 @@
+{"name":"plcsim_read_tags","description":"Read multiple live variable/tag values from S7-PLCSIM Advanced memory.","parameters":{"additionalProperties":false,"properties":{"tag_names":{"description":"List of symbolic tag names to read.","type":"array"}},"required":["tag_names"],"type":"object"}}

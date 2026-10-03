@@ -1,0 +1,1 @@
+{"name":"tia_list_devices","description":"List all devices in the project (PLCs, HMIs, Drives, distributed I/O) with their type identifiers and group folders.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

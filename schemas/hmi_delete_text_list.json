@@ -1,0 +1,1 @@
+{"name":"hmi_delete_text_list","description":"Delete an HMI text list from a WinCC Unified device.","parameters":{"additionalProperties":false,"properties":{"device_name":{"description":"Target HMI device or software name (optional).","type":"string"},"list_name":{"description":"Name of the text list to delete.","type":"string"}},"required":["list_name"],"type":"object"}}

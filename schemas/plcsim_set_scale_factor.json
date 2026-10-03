@@ -1,0 +1,1 @@
+{"name":"plcsim_set_scale_factor","description":"Set the simulation time scale factor (e.g. 1.0 = real-time, 2.0 = 2x speed, 5.0 = 5x speed).","parameters":{"additionalProperties":false,"properties":{"scale_factor":{"description":"Scale factor (\u003e 0.0, e.g. 1.0, 2.0, 5.0).","type":"number"}},"required":["scale_factor"],"type":"object"}}

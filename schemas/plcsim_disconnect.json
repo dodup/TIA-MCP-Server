@@ -1,0 +1,1 @@
+{"name":"plcsim_disconnect","description":"Disconnect from the currently connected S7-PLCSIM Advanced instance.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

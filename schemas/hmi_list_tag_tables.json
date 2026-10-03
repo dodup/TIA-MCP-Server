@@ -1,0 +1,1 @@
+{"name":"hmi_list_tag_tables","description":"List all HMI tag tables in the HMI software target.","parameters":{"additionalProperties":false,"properties":{"target_name":{"description":"Target HMI software name (optional).","type":"string"}},"type":"object"}}

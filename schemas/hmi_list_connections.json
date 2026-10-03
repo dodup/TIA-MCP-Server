@@ -1,0 +1,1 @@
+{"name":"hmi_list_connections","description":"List all HMI connections in the WinCC Unified HMI software (name, communication driver, partner station, partner node, disabled status).","parameters":{"additionalProperties":false,"properties":{"device_name":{"description":"Device or HMI software name (optional, defaults to first HMI target).","type":"string"}},"type":"object"}}

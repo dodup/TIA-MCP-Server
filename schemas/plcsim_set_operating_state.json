@@ -1,0 +1,1 @@
+{"name":"plcsim_set_operating_state","description":"Set the operating state of the connected S7-PLCSIM Advanced instance (Run, Stop, MemoryReset).","parameters":{"additionalProperties":false,"properties":{"state":{"description":"Desired operating state ('Run', 'Stop', or 'MemoryReset').","type":"string"}},"required":["state"],"type":"object"}}

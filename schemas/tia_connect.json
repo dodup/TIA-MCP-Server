@@ -1,0 +1,1 @@
+{"name":"tia_connect","description":"Connect/attach to a running TIA Portal instance. If process_id is omitted, connects to the first running instance.","parameters":{"additionalProperties":false,"properties":{"process_id":{"description":"Process ID (PID) of the TIA Portal instance to attach to (optional).","type":"integer"}},"type":"object"}}

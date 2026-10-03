@@ -1,0 +1,1 @@
+{"name":"plcsim_read_tag","description":"Read a live variable or tag value from S7-PLCSIM Advanced memory by symbolic tag name.","parameters":{"additionalProperties":false,"properties":{"tag_name":{"description":"Symbolic tag name (e.g. 'DB_MixingLine.Status_StepNumber', 'DB_MixingLine.Line.MixingTank.CurrentLevel').","type":"string"}},"required":["tag_name"],"type":"object"}}

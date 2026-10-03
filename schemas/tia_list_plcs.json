@@ -1,0 +1,1 @@
+{"name":"tia_list_plcs","description":"List all PLCs detected in the project with software summaries (block counts, UDT counts, tag tables).","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

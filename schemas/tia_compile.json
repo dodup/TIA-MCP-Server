@@ -1,0 +1,1 @@
+{"name":"tia_compile","description":"Compile PLC software to check syntax, consistency, and generate machine code. Returns errors, warnings, and messages.","parameters":{"additionalProperties":false,"properties":{"plc_name":{"description":"Name of the target PLC to compile (optional, defaults to first PLC).","type":"string"}},"type":"object"}}

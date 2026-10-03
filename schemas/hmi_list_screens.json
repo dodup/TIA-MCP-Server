@@ -1,0 +1,1 @@
+{"name":"hmi_list_screens","description":"List all screens in the specified HMI software target with dimensions and element counts.","parameters":{"additionalProperties":false,"properties":{"target_name":{"description":"Name of the HMI device or software target (optional, defaults to first found).","type":"string"}},"type":"object"}}

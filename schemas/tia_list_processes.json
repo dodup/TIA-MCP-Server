@@ -1,0 +1,1 @@
+{"name":"tia_list_processes","description":"List all running Siemens TIA Portal instances on the machine with PID, open project path, and mode.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

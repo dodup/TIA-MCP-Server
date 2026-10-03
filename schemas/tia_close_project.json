@@ -1,0 +1,1 @@
+{"name":"tia_close_project","description":"Close the active TIA Portal project.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

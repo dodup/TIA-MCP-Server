@@ -1,0 +1,1 @@
+{"name":"plcsim_get_status","description":"Get live status, operating mode, CPU type, scale factor, and tag count of the connected S7-PLCSIM Advanced instance.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

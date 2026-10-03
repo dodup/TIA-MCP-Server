@@ -1,0 +1,1 @@
+{"name":"tia_delete_block","description":"Delete a PLC program block from the project.","parameters":{"additionalProperties":false,"properties":{"block_name":{"description":"Name of the block to delete.","type":"string"},"plc_name":{"description":"Name of the target PLC (optional, defaults to first PLC).","type":"string"}},"required":["block_name"],"type":"object"}}

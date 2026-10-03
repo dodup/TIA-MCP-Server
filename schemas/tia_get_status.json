@@ -1,0 +1,1 @@
+{"name":"tia_get_status","description":"Get the current TIA Openness connection status, attached process ID, open project name and path.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

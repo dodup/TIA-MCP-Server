@@ -1,0 +1,1 @@
+{"name":"tia_testsuite_load_test","description":"Load/import a TestSuite .tat test file into the project with Override option.","parameters":{"additionalProperties":false,"properties":{"file_path":{"description":"Path to the .tat file on disk.","type":"string"}},"required":["file_path"],"type":"object"}}

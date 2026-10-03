@@ -1,0 +1,1 @@
+{"name":"plcsim_list_instances","description":"List all registered Siemens S7-PLCSIM Advanced instances with ID, name, operating state, CPU type, and IP.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

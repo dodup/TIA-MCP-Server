@@ -1,0 +1,1 @@
+{"name":"hmi_list_text_lists","description":"List HMI text lists on a WinCC Unified device with their entries and values.","parameters":{"additionalProperties":false,"properties":{"device_name":{"description":"Target HMI device or software name (optional).","type":"string"}},"type":"object"}}

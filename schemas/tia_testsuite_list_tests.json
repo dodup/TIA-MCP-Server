@@ -1,0 +1,1 @@
+{"name":"tia_testsuite_list_tests","description":"List TestSuite test cases configured in the current project.","parameters":{"additionalProperties":false,"properties":{},"type":"object"}}

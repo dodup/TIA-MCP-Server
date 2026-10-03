@@ -1,0 +1,1 @@
+{"name":"hmi_delete_screen","description":"Delete an HMI screen from the HMI software target.","parameters":{"additionalProperties":false,"properties":{"screen_name":{"description":"Name of the screen to delete.","type":"string"},"target_name":{"description":"Target HMI software name (optional).","type":"string"}},"required":["screen_name"],"type":"object"}}
