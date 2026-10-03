@@ -4,6 +4,7 @@
 [![Simulation](https://img.shields.io/badge/Simulation-S7--PLCSIM%20Advanced%20V8.0-008080.svg)](https://support.industry.siemens.com)
 [![Protocol](https://img.shields.io/badge/MCP-2024--11--05-blue.svg)](https://modelcontextprotocol.io)
 [![Runtime](https://img.shields.io/badge/.NET%20Framework-4.8%20x64-512BD4.svg)](https://dotnet.microsoft.com)
+[![Version](https://img.shields.io/badge/Version-v0.0.2-blue.svg)](release/release0.0.2.zip)
 [![Tools](https://img.shields.io/badge/Tools-62%20Registered-brightgreen.svg)](#complete-tools-reference-dictionary-62-tools)
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 
@@ -635,6 +636,24 @@ This repository includes 3 turnkey agent skills located in `.agents/skills/`:
    Automated design-to-code pipeline converting visual Figma layouts and SVG vectors into functional WinCC Unified screens.
 3. **`plcsim-sequence-tester`** ([SKILL.md](.agents/skills/plcsim-sequence-tester/SKILL.md)):
    Automated Hardware-in-the-Loop sequence testing on S7-PLCSIM Advanced controllers with parameterized testing, 80ms telemetry capture, and markdown report generation.
+
+---
+
+## Version History & Bug Fixes
+
+### [v0.0.2] - 2026-10-03
+* **Fixed CI / GitHub Actions Missing Siemens Assemblies**: Resolved `The type or namespace name 'Siemens' could not be found` build failure on CI/CD runners and machines without Siemens TIA Portal pre-installed. Added reference assemblies to `src/lib/` with automatic fallback in `TiaOpennessMcp.csproj`, ensuring clean compilation on any standard Windows machine.
+* **Full Dependency Bundling (`CopyLocal / Private=True`)**: All required dependencies (`Siemens.Engineering.*`, `Siemens.Simatic.Simulation.Runtime.Api.x64.dll`, `System.Text.Json`, `Microsoft.Bcl.AsyncInterfaces`, etc.) are now automatically copied to the build output alongside `TiaOpennessMcp.exe`.
+* **Zero-Dependency Runtime Capability**: Updated the runtime `AssemblyResolve` handler to search the application directory and `lib/` subfolder first. Any Windows machine running `TiaOpennessMcp.exe` from the release package will load all dependencies immediately without missing DLL errors.
+* **Modernized GitHub Actions CI**: Removed deprecated `microsoft/setup-msbuild` action; standardized directly on `actions/setup-dotnet@v4` with native SDK compilation.
+* **Pre-Compiled Release Package v0.0.2**: Published [`release/release0.0.2.zip`](release/release0.0.2.zip) containing the updated executable, configuration, whitelist registration script, and all runtime dependencies.
+
+### [v0.0.1] - 2026-10-02
+* Initial open-source release with 62 specialized industrial automation tools.
+* TIA Portal V21 Openness integration (PLC logic, SimaticML, UDTs, tag tables, native diagnostics).
+* WinCC Unified HMI generation from Figma design tokens and SVG vectors.
+* S7-PLCSIM Advanced V8.0 live simulation, clock scaling, and automated sequence testing (`plcsim_run_sequence`).
+* Packaged agent skills for Google Antigravity, Claude Code, and Cursor.
 
 ---
 

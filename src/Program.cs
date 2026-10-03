@@ -158,9 +158,22 @@ namespace TiaOpennessMcp
         static Assembly? ResolveV21Assembly(object sender, ResolveEventArgs args)
         {
             var name = new AssemblyName(args.Name).Name;
+            if (string.IsNullOrEmpty(name)) return null;
+
+            // 1. Check application directory (beside .exe)
+            string appDir = AppDomain.CurrentDomain.BaseDirectory;
+            string localPath = Path.Combine(appDir, name + ".dll");
+            if (File.Exists(localPath)) return Assembly.LoadFrom(localPath);
+
+            // 2. Check lib subfolder beside .exe
+            string libPath = Path.Combine(appDir, "lib", name + ".dll");
+            if (File.Exists(libPath)) return Assembly.LoadFrom(libPath);
+
+            // 3. Check standard V21 PublicAPI path
             var path = Path.Combine(V21ApiPath, name + ".dll");
             if (File.Exists(path)) return Assembly.LoadFrom(path);
 
+            // 4. Check PLCSIM Advanced API path
             string plcsimPath = Path.Combine(@"C:\Program Files (x86)\Common Files\Siemens\PLCSIMADV\API\8.0", name + ".dll");
             if (File.Exists(plcsimPath)) return Assembly.LoadFrom(plcsimPath);
 

@@ -8,40 +8,59 @@
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <PlatformTarget>x64</PlatformTarget>
+    <AssemblyVersion>0.0.2.0</AssemblyVersion>
+    <FileVersion>0.0.2.0</FileVersion>
+    <Version>0.0.2</Version>
   </PropertyGroup>
 
   <!--
-    Private=False: DLLs are loaded at runtime via the AssemblyResolve handler
-    pointing to C:\Program Files\Siemens\Automation\Portal V21\PublicAPI\V21\net48.
+    Resolve Siemens assemblies:
+    1. First check local TIA Portal installation paths (if present)
+    2. Fall back to bundled reference assemblies in $(MSBuildProjectDirectory)\lib
+    CopyLocal (Private=True) ensures all runtime dependencies are bundled with the executable.
   -->
+  <PropertyGroup>
+    <SiemensPublicApiDir Condition="'$(SiemensPublicApiDir)' == '' and Exists('C:\Program Files\Siemens\Automation\Portal V21\PublicAPI\V21\net48\Siemens.Engineering.Base.dll')">C:\Program Files\Siemens\Automation\Portal V21\PublicAPI\V21\net48</SiemensPublicApiDir>
+    <SiemensPublicApiDir Condition="'$(SiemensPublicApiDir)' == ''">$(MSBuildProjectDirectory)\lib</SiemensPublicApiDir>
+
+    <PlcSimApiDir Condition="'$(PlcSimApiDir)' == '' and Exists('C:\Program Files (x86)\Common Files\Siemens\PLCSIMADV\API\8.0\Siemens.Simatic.Simulation.Runtime.Api.x64.dll')">C:\Program Files (x86)\Common Files\Siemens\PLCSIMADV\API\8.0</PlcSimApiDir>
+    <PlcSimApiDir Condition="'$(PlcSimApiDir)' == ''">$(MSBuildProjectDirectory)\lib</PlcSimApiDir>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Siemens.Engineering.Base">
-      <HintPath>C:\Program Files\Siemens\Automation\Portal V21\PublicAPI\V21\net48\Siemens.Engineering.Base.dll</HintPath>
-      <Private>False</Private>
+      <HintPath Condition="Exists('$(SiemensPublicApiDir)\Siemens.Engineering.Base.dll')">$(SiemensPublicApiDir)\Siemens.Engineering.Base.dll</HintPath>
+      <HintPath Condition="!Exists('$(SiemensPublicApiDir)\Siemens.Engineering.Base.dll')">$(MSBuildProjectDirectory)\lib\Siemens.Engineering.Base.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Siemens.Engineering.Step7">
-      <HintPath>C:\Program Files\Siemens\Automation\Portal V21\PublicAPI\V21\net48\Siemens.Engineering.Step7.dll</HintPath>
-      <Private>False</Private>
+      <HintPath Condition="Exists('$(SiemensPublicApiDir)\Siemens.Engineering.Step7.dll')">$(SiemensPublicApiDir)\Siemens.Engineering.Step7.dll</HintPath>
+      <HintPath Condition="!Exists('$(SiemensPublicApiDir)\Siemens.Engineering.Step7.dll')">$(MSBuildProjectDirectory)\lib\Siemens.Engineering.Step7.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Siemens.Engineering.WinCC">
-      <HintPath>C:\Program Files\Siemens\Automation\Portal V21\PublicAPI\V21\net48\Siemens.Engineering.WinCC.dll</HintPath>
-      <Private>False</Private>
+      <HintPath Condition="Exists('$(SiemensPublicApiDir)\Siemens.Engineering.WinCC.dll')">$(SiemensPublicApiDir)\Siemens.Engineering.WinCC.dll</HintPath>
+      <HintPath Condition="!Exists('$(SiemensPublicApiDir)\Siemens.Engineering.WinCC.dll')">$(MSBuildProjectDirectory)\lib\Siemens.Engineering.WinCC.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Siemens.Engineering.WinCCUnified">
-      <HintPath>C:\Program Files\Siemens\Automation\Portal V21\PublicAPI\V21\net48\Siemens.Engineering.WinCCUnified.dll</HintPath>
-      <Private>False</Private>
+      <HintPath Condition="Exists('$(SiemensPublicApiDir)\Siemens.Engineering.WinCCUnified.dll')">$(SiemensPublicApiDir)\Siemens.Engineering.WinCCUnified.dll</HintPath>
+      <HintPath Condition="!Exists('$(SiemensPublicApiDir)\Siemens.Engineering.WinCCUnified.dll')">$(MSBuildProjectDirectory)\lib\Siemens.Engineering.WinCCUnified.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Siemens.Engineering.TestSuite">
-      <HintPath>C:\Program Files\Siemens\Automation\Portal V21\PublicAPI\V21\net48\Siemens.Engineering.TestSuite.dll</HintPath>
-      <Private>False</Private>
+      <HintPath Condition="Exists('$(SiemensPublicApiDir)\Siemens.Engineering.TestSuite.dll')">$(SiemensPublicApiDir)\Siemens.Engineering.TestSuite.dll</HintPath>
+      <HintPath Condition="!Exists('$(SiemensPublicApiDir)\Siemens.Engineering.TestSuite.dll')">$(MSBuildProjectDirectory)\lib\Siemens.Engineering.TestSuite.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Siemens.Simatic.Simulation.Runtime.Api">
-      <HintPath>C:\Program Files (x86)\Common Files\Siemens\PLCSIMADV\API\8.0\Siemens.Simatic.Simulation.Runtime.Api.x64.dll</HintPath>
-      <Private>False</Private>
+      <HintPath Condition="Exists('$(PlcSimApiDir)\Siemens.Simatic.Simulation.Runtime.Api.x64.dll')">$(PlcSimApiDir)\Siemens.Simatic.Simulation.Runtime.Api.x64.dll</HintPath>
+      <HintPath Condition="!Exists('$(PlcSimApiDir)\Siemens.Simatic.Simulation.Runtime.Api.x64.dll')">$(MSBuildProjectDirectory)\lib\Siemens.Simatic.Simulation.Runtime.Api.x64.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="Microsoft.CSharp" />
